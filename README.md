@@ -1,4 +1,12 @@
-![AirHost Pro Banner](https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80)
+Yes, absolutely! You can use your own pictures in a GitHub README. There are two main ways to do it:
+
+1. **Local File**: You upload the image file (e.g., `logo.png`) to your GitHub repository (usually in a folder named `assets` or `images`) and link to it.
+2. **Hosted Link**: You upload the image to a hosting service or even just drag and drop it into a GitHub issue/comment to get a URL, then paste that URL.
+
+Here is the updated code including placeholders for your own images:
+
+```markdown
+![AirHost Pro Banner](YOUR_IMAGE_URL_OR_PATH_HERE)
 <div>
   <p align="center">
     <img src="https://img.shields.io/badge/Status-Stable-green.svg">
@@ -29,7 +37,8 @@ Inside the solution:
 * **Icons**: Lucide Icons
 * **Analytics**: Intelligent DSS for RevPAR and Occupancy tracking
 
-
+### System Architecture
+![Architecture Diagram](YOUR_IMAGE_URL_OR_PATH_HERE)
 
 ## 📋 System Modules
 1. **Dashboard**: Tracks RevPAR, occupancy rates, and intelligent alerts.
@@ -43,3 +52,32 @@ To run the AirHost Pro MIS locally:
 1. **Install Dependencies**:
    ```bash
    pip install -r requirements.txt
+
+```
+
+2. **Initialize Database**:
+The database is pre-seeded. To reset the data:
+```bash
+python seed.py
+
+```
+
+
+3. **Run the Application**:
+```bash
+python app.py
+
+```
+
+
+4. **Access the App**:
+Navigate to `http://127.0.0.1:5000`.
+
+## 🗺️ Roadmap
+
+* [x] Centralized Reservation Management
+* [x] Automated RevPAR Tracking
+* [x] Real-time Maintenance Status
+* [ ] **Phase 2**: Direct payment processing (Stripe integration)
+* [ ] **Phase 2**: External channel management (Airbnb/Booking.com API)
+* [ ] **Phase 3**: AI-driven predictive pricing models
