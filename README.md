@@ -72,7 +72,7 @@ Unlike traditional spreadsheet-based workflows, AirHost Pro provides real-time t
 
 **1️ Clone the Repository**
 ```bash
-git clone https://github.com/yourusername/airhost-pro.git
+git clone https://github.com/player-ZED/airhost-pro.git
 cd airhost-pro
 ```
 
