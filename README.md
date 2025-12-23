@@ -76,23 +76,23 @@ git clone https://github.com/yourusername/airhost-pro.git
 cd airhost-pro
 ```
 
-** Install Dependencies**
+**Install Dependencies**
 ```bash
 pip install -r requirements.txt
 ```
 
-** Initialize Database**
+**Initialize Database**
 The database comes pre-seeded with sample data. To reset:
 ```bash
 python seed.py
 ```
 
-** Run the Application**
+**Run the Application**
 ```bash
 python app.py
 ```
 
-** Access the Interface**
+**Access the Interface**
 Open your browser and navigate to:
 ```
 http://127.0.0.1:5000
