@@ -1,83 +1,58 @@
-Yes, absolutely! You can use your own pictures in a GitHub README. There are two main ways to do it:
+<p align="center">
+  <img src="https://private-user-images.githubusercontent.com/140601000/529484814-0b89da25-ef0f-416d-8457-30f0a888ab2e.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjY0NjI4NjcsIm5iZiI6MTc2NjQ2MjU2NywicGF0aCI6Ii8xNDA2MDEwMDAvNTI5NDg0ODE0LTBiODlkYTI1LWVmMGYtNDE2ZC04NDU3LTMwZjBhODg4YWIyZS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUxMjIzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MTIyM1QwNDAyNDdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT02NjNjNTdiNmYwNTlkZGU1YWEwYjYyYmVmZTA2ZTdmNTJlMThlZWEyYmIyMTBlNzAxMzFjMGIyZjBjMTM5ZWEzJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.rgBxG6mtwwZrnCsNK_1Sn0lHBb_c_Y7GZ0rrLL08elE" alt="AirHost Pro Banner" width="100%">
+</p>
 
-1. **Local File**: You upload the image file (e.g., `logo.png`) to your GitHub repository (usually in a folder named `assets` or `images`) and link to it.
-2. **Hosted Link**: You upload the image to a hosting service or even just drag and drop it into a GitHub issue/comment to get a URL, then paste that URL.
+<h1 align="center">🏨 AirHost Pro</h1>
 
-Here is the updated code including placeholders for your own images:
+<p align="center">
+  <strong>A "High-White Minimalist" Management Information System for modern property oversight.</strong>
+</p>
 
-```markdown
-![AirHost Pro Banner](YOUR_IMAGE_URL_OR_PATH_HERE)
-<div>
-  <p align="center">
-    <img src="https://img.shields.io/badge/Status-Stable-green.svg">
-    <img src="https://img.shields.io/badge/Platform-Web-blue">
-    <img src="https://img.shields.io/badge/Framework-Flask-black.svg?logo=flask">
-    <img src="https://img.shields.io/badge/Database-SQLite-003B57?logo=sqlite">
-    <img src="https://img.shields.io/badge/Design-High--White%20Minimalism-white">
-    <a href="https://www.paypal.com" target"_blank"><img src="https://img.shields.io/badge/Donate-PayPal-green.svg"></a>
-  </p>
-</div>
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" alt="Flask">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind">
+  <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite">
+</p>
 
-# 🏨 AirHost Pro — Management Information System
-**AirHost Pro** is a boutique property management agency MIS specializing in decentralized short-term rentals. This system replaces manual spreadsheets and fragmented communication with a centralized, real-time intelligence hub.
+---
 
-## 🎯 Project Objectives
-The system is designed to solve critical operational gaps such as decision latency and revenue leakage:
+## 📖 Overview
 
-* **Operational Intelligence**: Real-time property status (Clean/Dirty/Maintenance) to reduce guest turnaround time.
-* **Decision Support System (DSS)**: Automated monitoring of occupancy trends to flag properties needing pricing intervention.
-* **Strategic Financials**: Automated P&L reports per property to identify high-yield assets.
-* **High-White Minimalism**: A lightweight, portable web interface requiring minimal training for non-technical staff.
+**AirHost Pro** is a sophisticated property management solution designed to reduce cognitive load through a "High-White Minimalist" design philosophy. It integrates a **Decision Support System (DSS)** to provide property managers with actionable insights rather than just raw data.
 
-## 🛠️ Technology Stack
-Inside the solution:
-* **Backend**: Python (Flask)
-* **Database**: SQLite with SQLAlchemy ORM
-* **Frontend**: HTML5 & Tailwind CSS (CDN)
-* **Icons**: Lucide Icons
-* **Analytics**: Intelligent DSS for RevPAR and Occupancy tracking
+### Key Performance Indicators (KPIs) Tracked:
+* **RevPAR:** Revenue Per Available Room.
+* **Occupancy Velocity:** Real-time monitoring of booking trends.
+* **Property P&L:** Granular financial reporting for individual assets.
 
-### System Architecture
-![Architecture Diagram](YOUR_IMAGE_URL_OR_PATH_HERE)
+---
 
-## 📋 System Modules
-1. **Dashboard**: Tracks RevPAR, occupancy rates, and intelligent alerts.
-2. **Property Management**: Grid view of managed properties with real-time status indicators.
-3. **Reservation Engine**: Tracking Guest-In and Guest-Out flows.
-4. **Financial Reporting**: Per-property Net Profit and P&L Statements.
+## ✨ Features
 
-## 🚀 Installation & Setup
-To run the AirHost Pro MIS locally:
+- **🛡️ Intelligent Dashboard**: Features a Decision Support System (DSS) that triggers smart alerts based on property performance.
+- **🏠 Property Grid**: A high-visibility management interface with real-time status indicators.
+- **📅 Centralized Calendar**: Streamlined reservation tracking and scheduling.
+- **📊 Financial Suite**: Automated Profit and Loss statements generated per property.
 
-1. **Install Dependencies**:
-   ```bash
-   pip install -r requirements.txt
+---
 
-```
+## 🏗️ System Architecture
 
-2. **Initialize Database**:
-The database is pre-seeded. To reset the data:
+AirHost Pro is built with a focus on speed and clean code:
+
+* **Backend**: Python / Flask with SQLAlchemy ORM.
+* **Frontend**: Responsive HTML5 utilizing Tailwind CSS for the minimalist UI.
+* **Icons**: Lucide Icons for a modern, crisp aesthetic.
+* **Database**: Lightweight and portable SQLite.
+
+---
+
+## 🚀 Getting Started
+
+### 1. Environment Setup
+Clone the repository and install the necessary dependencies:
 ```bash
-python seed.py
-
-```
-
-
-3. **Run the Application**:
-```bash
-python app.py
-
-```
-
-
-4. **Access the App**:
-Navigate to `http://127.0.0.1:5000`.
-
-## 🗺️ Roadmap
-
-* [x] Centralized Reservation Management
-* [x] Automated RevPAR Tracking
-* [x] Real-time Maintenance Status
-* [ ] **Phase 2**: Direct payment processing (Stripe integration)
-* [ ] **Phase 2**: External channel management (Airbnb/Booking.com API)
-* [ ] **Phase 3**: AI-driven predictive pricing models
+git clone [https://github.com/your-username/AirHost-Pro.git](https://github.com/your-username/AirHost-Pro.git)
+cd AirHost-Pro
+pip install -r requirements.txt
