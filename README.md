@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://private-user-images.githubusercontent.com/140601000/529484814-0b89da25-ef0f-416d-8457-30f0a888ab2e.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjY0NjI4NjcsIm5iZiI6MTc2NjQ2MjU2NywicGF0aCI6Ii8xNDA2MDEwMDAvNTI5NDg0ODE0LTBiODlkYTI1LWVmMGYtNDE2ZC04NDU3LTMwZjBhODg4YWIyZS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUxMjIzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MTIyM1QwNDAyNDdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT02NjNjNTdiNmYwNTlkZGU1YWEwYjYyYmVmZTA2ZTdmNTJlMThlZWEyYmIyMTBlNzAxMzFjMGIyZjBjMTM5ZWEzJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.rgBxG6mtwwZrnCsNK_1Sn0lHBb_c_Y7GZ0rrLL08elE" alt="AirHost Pro Banner" width="800"/>
+  <img src="https://github.com/player-ZED/AirHost-Pro/blob/master/Banner.jpeg" alt="AirHost Pro Banner" width="800"/>
 </p>
 
 # AirHost Pro - Management Information System
