@@ -10,77 +10,160 @@
 
 ---
 
-## 🚀 Overview
+##  Overview
 
-**AirHost Pro** is a modern **High-White Minimalist** property management system built to help managers track **revenue, occupancy, and maintenance tasks** efficiently.  
-It combines a clean design with intelligent alerts to support **data-driven decision-making**.
+**AirHost Pro** is a comprehensive property management system designed for short-term rental operations across vacation homes and urban properties. Built with a **High-White Minimalist** design philosophy, it centralizes information flow to support tactical and strategic decision-making for distributed property portfolios.
 
----
-
-## ✨ Features
-
-- **Dashboard**: RevPAR tracking, Occupancy rates, and Decision Support System alerts.  
-- **Properties**: Grid view of all managed properties with status indicators.  
-- **Calendar**: Track reservations and upcoming check-ins/check-outs.  
-- **Reports**: Generate **P&L Statements** for individual properties.
+Unlike traditional spreadsheet-based workflows, AirHost Pro provides real-time tracking of revenue metrics, occupancy rates, and operational status—eliminating data fragmentation and decision latency.
 
 ---
 
-## 💻 Technology Stack
+##  Key Objectives
 
-- **Backend**: Python (Flask), SQLite (SQLAlchemy)  
-- **Frontend**: HTML5, Tailwind CSS (CDN), Lucide Icons  
-- **Design**: High-White Minimalism, clean and responsive UI  
+- **Operational Excellence**: Unified dashboard for real-time property status tracking (Clean/Dirty/Maintenance)
+- **Decision Intelligence**: Automated Decision Support System (DSS) monitoring occupancy trends and flagging underperforming properties (<30% occupancy)
+- **Financial Transparency**: Automated P&L reports per property with RevPAR calculations
+- **User-Centric Design**: Lightweight web interface requiring minimal training for non-technical staff
 
 ---
 
-## ⚡ Getting Started
+##  Core Features
 
-### 1️⃣ Install Dependencies
+###  Dashboard
+- **RevPAR Tracking**: Real-time revenue per available room calculations
+- **Occupancy Metrics**: Current and historical occupancy rate monitoring
+- **Smart Alerts**: DSS-powered notifications for low-performance periods requiring pricing intervention
 
+###  Property Management
+- Grid view of all managed properties with live status indicators
+- Quick-access property details and performance metrics
+- Status tracking for cleaning, maintenance, and availability
+
+###  Reservation Calendar
+- Visual timeline of guest check-ins and check-outs
+- Turnaround time optimization for cleaning staff
+- Conflict detection and scheduling assistance
+
+### 📈 Executive Reports
+- Automated monthly P&L statement generation per property
+- Net profit calculations and trend analysis
+- Data-driven insights for asset allocation decisions
+
+---
+
+##  Technology Stack
+
+| Layer | Technology |
+|-------|------------|
+| **Backend** | Python 3.x, Flask 2.x |
+| **Database** | SQLite 3.0, SQLAlchemy ORM |
+| **Frontend** | HTML5, Tailwind CSS, Lucide Icons |
+| **Architecture** | MVC Pattern, RESTful Design |
+
+---
+
+##  Getting Started
+
+### Prerequisites
+- Python 3.x installed on your system
+- Basic understanding of Flask applications
+
+### Installation
+
+**1️ Clone the Repository**
+```bash
+git clone https://github.com/yourusername/airhost-pro.git
+cd airhost-pro
+```
+
+** Install Dependencies**
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2️⃣ Initialize Database
-
-The database is already seeded. To reset:
-
+** Initialize Database**
+The database comes pre-seeded with sample data. To reset:
 ```bash
 python seed.py
 ```
 
-### 3️⃣ Run the Application
-
+** Run the Application**
 ```bash
 python app.py
 ```
 
-### 4️⃣ Access the App
-
+** Access the Interface**
 Open your browser and navigate to:
-
 ```
 http://127.0.0.1:5000
 ```
 
 ---
 
-## 📝 Project Structure
+##  Project Structure
 
 ```
 AirHost-Pro/
-├── app.py
-├── seed.py
-├── requirements.txt
-├── models.py
-├── __pycache__/
-├── MIS-Project.docx
-└── REPORT_DRAFT.md
+├── app.py              # Main Flask application
+├── models.py           # Database models and schema
+├── seed.py             # Database seeding script
+├── requirements.txt    # Python dependencies
+├── templates/          # HTML templates
+├── static/             # CSS, JS, and assets
+├── MIS-Project.docx    # Project documentation
+└── REPORT_DRAFT.md     # Detailed project report
 ```
 
 ---
 
-## 📄 License
+##  Design Philosophy
 
-This project is for educational and internal use only.
+AirHost Pro embraces **High-White Minimalism** to ensure:
+- Reduced cognitive load for daily operations
+- Focus on critical metrics without visual clutter
+- Professional appearance suitable for executive reporting
+- Responsive design for tablet and desktop use
+
+---
+
+##  System Scope
+
+###  Current Features
+- Reservation management (Guest-In/Guest-Out tracking)
+- Property operations (Status and maintenance tracking)
+- Financial intelligence (RevPAR and Net Profit calculations)
+- Executive reporting (Monthly P&L generation)
+
+###  Future Roadmap
+- Payment processing integration (Stripe)
+- Channel management (Airbnb/Booking.com API sync)
+- Mobile application for field staff
+- Advanced analytics and forecasting
+
+---
+
+##  Problem Statement
+
+Traditional property management relies on manual spreadsheets and fragmented communication channels, leading to:
+- **Data Silos**: Financial data separated from booking schedules and property status
+- **Decision Latency**: Monthly manual RevPAR calculations detect issues too late
+- **Operational Delays**: Staff lack real-time check-out visibility
+- **Revenue Leakage**: No automated alerts for pricing optimization opportunities
+
+AirHost Pro solves these challenges through centralized data management and intelligent automation.
+
+---
+
+##  License
+
+This project is developed for educational and internal management purposes.
+
+---
+
+##  Contact
+
+For questions or support, please refer to the project documentation or contact the development team.
+
+---
+
+<p align="center">Made with ❤️ for Modern Property Management</p>
