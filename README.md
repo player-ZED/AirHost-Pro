@@ -1,58 +1,86 @@
 <p align="center">
-  <img src="https://private-user-images.githubusercontent.com/140601000/529484814-0b89da25-ef0f-416d-8457-30f0a888ab2e.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjY0NjI4NjcsIm5iZiI6MTc2NjQ2MjU2NywicGF0aCI6Ii8xNDA2MDEwMDAvNTI5NDg0ODE0LTBiODlkYTI1LWVmMGYtNDE2ZC04NDU3LTMwZjBhODg4YWIyZS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUxMjIzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MTIyM1QwNDAyNDdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT02NjNjNTdiNmYwNTlkZGU1YWEwYjYyYmVmZTA2ZTdmNTJlMThlZWEyYmIyMTBlNzAxMzFjMGIyZjBjMTM5ZWEzJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.rgBxG6mtwwZrnCsNK_1Sn0lHBb_c_Y7GZ0rrLL08elE" alt="AirHost Pro Banner" width="100%">
+  <img src="https://private-user-images.githubusercontent.com/140601000/529484814-0b89da25-ef0f-416d-8457-30f0a888ab2e.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjY0NjI4NjcsIm5iZiI6MTc2NjQ2MjU2NywicGF0aCI6Ii8xNDA2MDEwMDAvNTI5NDg0ODE0LTBiODlkYTI1LWVmMGYtNDE2ZC04NDU3LTMwZjBhODg4YWIyZS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUxMjIzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MTIyM1QwNDAyNDdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT02NjNjNTdiNmYwNTlkZGU1YWEwYjYyYmVmZTA2ZTdmNTJlMThlZWEyYmIyMTBlNzAxMzFjMGIyZjBjMTM5ZWEzJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.rgBxG6mtwwZrnCsNK_1Sn0lHBb_c_Y7GZ0rrLL08elE" alt="AirHost Pro Banner" width="800"/>
 </p>
 
-<h1 align="center">🏨 AirHost Pro</h1>
+# AirHost Pro - Management Information System
 
-<p align="center">
-  <strong>A "High-White Minimalist" Management Information System for modern property oversight.</strong>
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" alt="Flask">
-  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind">
-  <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite">
-</p>
+[![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python&logoColor=white)](https://www.python.org/) 
+[![Flask](https://img.shields.io/badge/Flask-2.x-orange?logo=flask&logoColor=white)](https://flask.palletsprojects.com/) 
+[![SQLite](https://img.shields.io/badge/SQLite-3.0-lightgrey?logo=sqlite&logoColor=blue)](https://www.sqlite.org/) 
 
 ---
 
-## 📖 Overview
+## 🚀 Overview
 
-**AirHost Pro** is a sophisticated property management solution designed to reduce cognitive load through a "High-White Minimalist" design philosophy. It integrates a **Decision Support System (DSS)** to provide property managers with actionable insights rather than just raw data.
-
-### Key Performance Indicators (KPIs) Tracked:
-* **RevPAR:** Revenue Per Available Room.
-* **Occupancy Velocity:** Real-time monitoring of booking trends.
-* **Property P&L:** Granular financial reporting for individual assets.
+**AirHost Pro** is a modern **High-White Minimalist** property management system built to help managers track **revenue, occupancy, and maintenance tasks** efficiently.  
+It combines a clean design with intelligent alerts to support **data-driven decision-making**.
 
 ---
 
 ## ✨ Features
 
-- **🛡️ Intelligent Dashboard**: Features a Decision Support System (DSS) that triggers smart alerts based on property performance.
-- **🏠 Property Grid**: A high-visibility management interface with real-time status indicators.
-- **📅 Centralized Calendar**: Streamlined reservation tracking and scheduling.
-- **📊 Financial Suite**: Automated Profit and Loss statements generated per property.
+- **Dashboard**: RevPAR tracking, Occupancy rates, and Decision Support System alerts.  
+- **Properties**: Grid view of all managed properties with status indicators.  
+- **Calendar**: Track reservations and upcoming check-ins/check-outs.  
+- **Reports**: Generate **P&L Statements** for individual properties.
 
 ---
 
-## 🏗️ System Architecture
+## 💻 Technology Stack
 
-AirHost Pro is built with a focus on speed and clean code:
-
-* **Backend**: Python / Flask with SQLAlchemy ORM.
-* **Frontend**: Responsive HTML5 utilizing Tailwind CSS for the minimalist UI.
-* **Icons**: Lucide Icons for a modern, crisp aesthetic.
-* **Database**: Lightweight and portable SQLite.
+- **Backend**: Python (Flask), SQLite (SQLAlchemy)  
+- **Frontend**: HTML5, Tailwind CSS (CDN), Lucide Icons  
+- **Design**: High-White Minimalism, clean and responsive UI  
 
 ---
 
-## 🚀 Getting Started
+## ⚡ Getting Started
 
-### 1. Environment Setup
-Clone the repository and install the necessary dependencies:
+### 1️⃣ Install Dependencies
+
 ```bash
-git clone [https://github.com/your-username/AirHost-Pro.git](https://github.com/your-username/AirHost-Pro.git)
-cd AirHost-Pro
 pip install -r requirements.txt
+```
+
+### 2️⃣ Initialize Database
+
+The database is already seeded. To reset:
+
+```bash
+python seed.py
+```
+
+### 3️⃣ Run the Application
+
+```bash
+python app.py
+```
+
+### 4️⃣ Access the App
+
+Open your browser and navigate to:
+
+```
+http://127.0.0.1:5000
+```
+
+---
+
+## 📝 Project Structure
+
+```
+AirHost-Pro/
+├── app.py
+├── seed.py
+├── requirements.txt
+├── models.py
+├── __pycache__/
+├── MIS-Project.docx
+└── REPORT_DRAFT.md
+```
+
+---
+
+## 📄 License
+
+This project is for educational and internal use only.
