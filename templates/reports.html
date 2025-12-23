@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="space-y-8">
+    <div class="flex justify-between items-center">
+        <h1 class="text-3xl font-bold text-neutral">Financial Reports</h1>
+        <button onclick="window.print()"
+            class="flex items-center gap-2 text-gray-500 hover:text-neutral transition-colors cursor-pointer border border-gray-200 px-4 py-2 rounded-xl bg-white hover:bg-gray-50">
+            <i data-lucide="printer" class="w-4 h-4"></i>
+            <span class="text-sm font-medium">Print Report</span>
+        </button>
+    </div>
+
+    <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+        <div class="p-6 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+            <div>
+                <h2 class="font-bold text-lg text-neutral">Profit & Loss Statement</h2>
+                <p class="text-gray-500 text-sm">Monthly performance per property</p>
+            </div>
+            <div class="flex gap-2">
+                <select onchange="if(this.value) window.location.href='?timeframe='+this.value"
+                    class="text-sm border border-gray-200 rounded-lg px-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-primary cursor-pointer">
+                    <option value="all" {% if timeframe=='all' %}selected{% endif %}>All Time</option>
+                    <option value="this_month" {% if timeframe=='this_month' %}selected{% endif %}>This Month</option>
+                    <option value="last_month" {% if timeframe=='last_month' %}selected{% endif %}>Last Month</option>
+                    <option value="ytd" {% if timeframe=='ytd' %}selected{% endif %}>Year to Date</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="overflow-x-auto">
+            <table class="w-full text-left">
+                <thead class="bg-gray-50 border-b border-gray-100 text-xs uppercase text-gray-500 font-medium">
+                    <tr>
+                        <th class="px-6 py-4">Property</th>
+                        <th class="px-6 py-4 text-right">Income</th>
+                        <th class="px-6 py-4 text-right">Expenses</th>
+                        <th class="px-6 py-4 text-right">Net Profit</th>
+                        <th class="px-6 py-4 text-center">Status</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100 text-sm">
+                    {% for row in report_data %}
+                    <tr class="hover:bg-gray-50/50 transition-colors">
+                        <td class="px-6 py-4 font-medium text-neutral">{{ row.title }}</td>
+                        <td class="px-6 py-4 text-right text-green-600 font-medium">+${{ row.income }}</td>
+                        <td class="px-6 py-4 text-right text-red-500 font-medium">-${{ row.expenses }}</td>
+                        <td
+                            class="px-6 py-4 text-right font-bold {{ 'text-green-600' if row.profit > 0 else 'text-red-600' }}">
+                            ${{ row.profit }}
+                        </td>
+                        <td class="px-6 py-4 text-center">
+                            {% if row.profit > 0 %}
+                            <span
+                                class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-green-50 text-green-700">
+                                <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                                Profitable
+                            </span>
+                            {% else %}
+                            <span
+                                class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-red-50 text-red-700">
+                                <span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+                                Loss
+                            </span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot class="bg-gray-50 border-t border-gray-100 font-bold text-neutral">
+                    <tr>
+                        <td class="px-6 py-4">Total</td>
+                        <td class="px-6 py-4 text-right text-green-700">+${{ report_data|sum(attribute='income') }}</td>
+                        <td class="px-6 py-4 text-right text-red-600">-${{ report_data|sum(attribute='expenses') }}</td>
+                        <td class="px-6 py-4 text-right text-neutral">${{ report_data|sum(attribute='profit') }}</td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

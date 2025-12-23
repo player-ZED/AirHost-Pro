@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% set images = [
+'https://images.unsplash.com/photo-1600596542815-e32cb118d62f?auto=format&fit=crop&w=800&q=80',
+'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80',
+'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80',
+'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
+'https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?auto=format&fit=crop&w=800&q=80'
+] %}
+
+<div class="space-y-6">
+    <div class="flex justify-between items-center">
+        <h1 class="text-3xl font-bold text-neutral">Properties</h1>
+        <div class="flex gap-4">
+            <div class="relative">
+                <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"></i>
+                <input type="text" placeholder="Search properties..." id="propertySearch"
+                    class="pl-10 pr-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary w-64 text-sm">
+            </div>
+            <button onclick="toggleModal('propertyModal')"
+                class="bg-neutral text-white px-4 py-2.5 rounded-xl font-medium text-sm hover:bg-black transition-colors shadow-lg shadow-neutral/20">
+                Add Property
+            </button>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="propertyGrid">
+        {% for prop in properties %}
+        <a href="/property/{{ prop.id }}" class="block property-card" data-title="{{ prop.title.lower() }}">
+            <div
+                class="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group cursor-pointer h-full flex flex-col">
+                <!-- Image Placeholder -->
+                <div class="aspect-[4/3] bg-gray-200 relative overflow-hidden">
+                    <img src="{{ images[(prop.id - 1) % 5] }}" alt="{{ prop.title }}"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute top-3 right-3">
+                        <span class="px-2 py-1 rounded-md text-xs font-bold backdrop-blur-md shadow-sm border border-white/20
+                            {% if prop.status == 'Clean' %} bg-green-500/90 text-white
+                            {% elif prop.status == 'Dirty' %} bg-red-500/90 text-white
+                            {% else %} bg-yellow-500/90 text-white {% endif %}">
+                            {{ prop.status }}
+                        </span>
+                    </div>
+                </div>
+
+                <div class="p-4 flex flex-col flex-grow">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="font-bold text-neutral text-lg leading-tight">{{ prop.title }}</h3>
+                            <p class="text-gray-500 text-sm mt-1">{{ prop.type }}</p>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <i data-lucide="star" class="w-4 h-4 text-primary fill-primary"></i>
+                            <span class="text-sm font-medium">4.9</span>
+                        </div>
+                    </div>
+
+                    <p class="text-gray-400 text-sm mb-4 truncate">{{ prop.address }}</p>
+
+                    <div class="mt-auto flex justify-between items-center pt-4 border-t border-gray-50">
+                        <div>
+                            <span class="font-bold text-neutral text-lg">${{ prop.base_price }}</span>
+                            <span class="text-gray-500 text-sm"> / night</span>
+                        </div>
+                        {% if prop.status == 'Maintenance' %}
+                        <div
+                            class="flex items-center gap-1 text-red-600 bg-red-50 px-2 py-1 rounded-lg border border-red-100">
+                            <i data-lucide="wrench" class="w-3 h-3"></i>
+                            <span class="text-xs font-medium">Repair</span>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    document.getElementById('propertySearch').addEventListener('keyup', function (e) {
+        const term = e.target.value.toLowerCase();
+        const cards = document.querySelectorAll('.property-card');
+
+        cards.forEach(card => {
+            const title = card.getAttribute('data-title');
+            if (title.includes(term)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+</script>
+
+<!-- Property Modal -->
+<div id="propertyModal" class="hidden fixed inset-0 bg-black/50 z-50 flex justify-center items-center backdrop-blur-sm">
+    <div class="bg-white p-8 rounded-2xl w-full max-w-md shadow-2xl animate-fade-in relative">
+        <button onclick="toggleModal('propertyModal')" class="absolute top-4 right-4 text-gray-400 hover:text-neutral">
+            <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+
+        <h2 class="text-2xl font-bold text-neutral mb-6">Add Property</h2>
+
+        <form action="/add_property" method="POST" class="space-y-4">
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Title</label>
+                <input type="text" name="title" required placeholder="Seaside Villa"
+                    class="w-full border border-gray-200 rounded-xl px-4 py-2 focus:ring-2 focus:ring-primary focus:border-transparent outline-none">
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Type</label>
+                <select name="type" required
+                    class="w-full border border-gray-200 rounded-xl px-4 py-2 focus:ring-2 focus:ring-primary focus:border-transparent outline-none">
+                    <option value="Villa">Villa</option>
+                    <option value="Apartment">Apartment</option>
+                    <option value="House">House</option>
+                    <option value="Cabin">Cabin</option>
+                </select>
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Address</label>
+                <input type="text" name="address" required placeholder="123 Ocean Drive"
+                    class="w-full border border-gray-200 rounded-xl px-4 py-2 focus:ring-2 focus:ring-primary focus:border-transparent outline-none">
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Base Price ($)</label>
+                    <input type="number" name="base_price" required step="1"
+                        class="w-full border border-gray-200 rounded-xl px-4 py-2 focus:ring-2 focus:ring-primary focus:border-transparent outline-none">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Status</label>
+                    <select name="status" required
+                        class="w-full border border-gray-200 rounded-xl px-4 py-2 focus:ring-2 focus:ring-primary focus:border-transparent outline-none">
+                        <option value="Clean">Clean</option>
+                        <option value="Dirty">Dirty</option>
+                        <option value="Maintenance">Maintenance</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit"
+                class="w-full bg-primary hover:bg-[#E00B41] text-white font-bold py-3 rounded-xl shadow-lg shadow-primary/30 mt-2 transition-all">
+                Add Property
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}

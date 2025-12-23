@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="space-y-6">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold text-neutral mb-8">Billing & Plans</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <!-- Free Plan -->
+            <div
+                class="bg-white rounded-2xl border border-gray-100 p-6 flex flex-col items-center text-center opacity-60">
+                <h3 class="font-bold text-neutral mb-2">Starter</h3>
+                <div class="text-3xl font-bold text-neutral mb-4">$0 <span
+                        class="text-sm font-normal text-gray-500">/mo</span></div>
+                <ul class="text-sm text-gray-500 space-y-2 mb-6">
+                    <li>Up to 2 Properties</li>
+                    <li>Basic Reporting</li>
+                    <li>Manual Bookings</li>
+                </ul>
+                <button class="w-full py-2 border border-gray-200 rounded-xl font-medium text-sm">Current Plan</button>
+            </div>
+
+            <!-- Pro Plan (Active) -->
+            <div
+                class="bg-white rounded-2xl border-2 border-primary p-6 flex flex-col items-center text-center relative shadow-xl">
+                <div
+                    class="absolute -top-3 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wide">
+                    Most Popular</div>
+                <h3 class="font-bold text-neutral mb-2">Professional</h3>
+                <div class="text-3xl font-bold text-neutral mb-4">$29 <span
+                        class="text-sm font-normal text-gray-500">/mo</span></div>
+                <ul class="text-sm text-gray-500 space-y-2 mb-6">
+                    <li>Unlimited Properties</li>
+                    <li>Advanced Revenue Analytics</li>
+                    <li>Automated Alerts</li>
+                    <li>AI Suggestions</li>
+                </ul>
+                <button
+                    class="w-full py-2 bg-primary text-white rounded-xl font-medium text-sm shadow-lg shadow-primary/30">Active</button>
+            </div>
+
+            <!-- Enterprise -->
+            <div class="bg-white rounded-2xl border border-gray-100 p-6 flex flex-col items-center text-center">
+                <h3 class="font-bold text-neutral mb-2">Enterprise</h3>
+                <div class="text-3xl font-bold text-neutral mb-4">$99 <span
+                        class="text-sm font-normal text-gray-500">/mo</span></div>
+                <ul class="text-sm text-gray-500 space-y-2 mb-6">
+                    <li>Dedicated Support</li>
+                    <li>Custom API Access</li>
+                    <li>White-labeling</li>
+                </ul>
+                <button
+                    class="w-full py-2 border border-gray-200 rounded-xl font-medium text-sm hover:border-black transition-colors">Upgrade</button>
+            </div>
+        </div>
+
+        <!-- Payment Methods -->
+        <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+            <div class="p-6 border-b border-gray-100 flex justify-between items-center">
+                <h2 class="font-bold text-lg text-neutral">Payment Methods</h2>
+                <button class="text-primary text-sm font-medium hover:underline">+ Add Method</button>
+            </div>
+            <div class="p-6">
+                <div class="flex items-center gap-4 p-4 border border-gray-200 rounded-xl">
+                    <div
+                        class="w-12 h-8 bg-neutral rounded flex items-center justify-center text-white text-xs font-bold font-mono">
+                        VISA</div>
+                    <div class="flex-1">
+                        <p class="font-bold text-sm text-neutral">Visa ending in 4242</p>
+                        <p class="text-xs text-gray-500">Expires 12/28</p>
+                    </div>
+                    <span class="text-xs font-bold bg-gray-100 text-gray-600 px-2 py-1 rounded">Default</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

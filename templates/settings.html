@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="max-w-6xl mx-auto space-y-6">
+    <div class="mb-8">
+        <h1 class="text-3xl font-bold text-neutral">Settings</h1>
+        <p class="text-gray-600 mt-2">Configure your autonomous pricing system</p>
+    </div>
+
+    <!-- AI Pricing Controls -->
+    <div class="bg-white rounded-3xl border border-gray-200 shadow-sm overflow-hidden">
+        <div class="px-8 py-6 border-b border-gray-200 bg-gradient-to-r from-gray-50 to-white">
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <i data-lucide="trending-up" class="w-6 h-6 text-primary"></i>
+                </div>
+                <div>
+                    <h2 class="text-xl font-semibold text-neutral">AI Pricing Engine</h2>
+                    <p class="text-sm text-gray-600">Autonomous price optimization settings</p>
+                </div>
+            </div>
+        </div>
+
+        <form action="/update_settings" method="POST" class="p-8">
+            <div class="space-y-8">
+                <!-- Enable/Disable -->
+                <div class="flex items-center justify-between p-6 bg-gray-50 rounded-2xl">
+                    <div>
+                        <h3 class="font-semibold text-neutral text-lg">Enable Auto-Pricing</h3>
+                        <p class="text-sm text-gray-600 mt-1">Let AI automatically adjust prices based on demand</p>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" name="auto_pricing_enabled" value="true" {% if
+                            auto_pricing_enabled=='true' %}checked{% endif %} class="sr-only peer">
+                        <div
+                            class="w-14 h-7 bg-gray-300 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-red-100 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-primary">
+                        </div>
+                    </label>
+                </div>
+
+                <!-- Price Range Controls -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-3">
+                        <label class="block">
+                            <span class="text-sm font-semibold text-neutral">Minimum Price Limit</span>
+                            <p class="text-xs text-gray-500 mt-1">Lowest % of base price allowed</p>
+                        </label>
+                        <div class="relative">
+                            <input type="range" name="price_min_percent" min="50" max="100"
+                                value="{{ price_min_percent }}"
+                                class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary"
+                                oninput="this.nextElementSibling.textContent = this.value + '%'">
+                            <div class="text-center mt-2">
+                                <span class="inline-block px-4 py-2 bg-gray-100 rounded-lg font-bold text-neutral">{{
+                                    price_min_percent }}%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3">
+                        <label class="block">
+                            <span class="text-sm font-semibold text-neutral">Maximum Price Limit</span>
+                            <p class="text-xs text-gray-500 mt-1">Highest % of base price allowed</p>
+                        </label>
+                        <div class="relative">
+                            <input type="range" name="price_max_percent" min="100" max="200"
+                                value="{{ price_max_percent }}"
+                                class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary"
+                                oninput="this.nextElementSibling.textContent = this.value + '%'">
+                            <div class="text-center mt-2">
+                                <span class="inline-block px-4 py-2 bg-gray-100 rounded-lg font-bold text-neutral">{{
+                                    price_max_percent }}%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Adjustment Step -->
+                <div class="space-y-3">
+                    <label class="block">
+                        <span class="text-sm font-semibold text-neutral">Price Adjustment Step</span>
+                        <p class="text-xs text-gray-500 mt-1">How much to change price each time (in %)</p>
+                    </label>
+                    <div class="relative">
+                        <input type="range" name="price_step_percent" min="2" max="20" value="{{ price_step_percent }}"
+                            class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary"
+                            oninput="this.nextElementSibling.textContent = this.value + '%'">
+                        <div class="text-center mt-2">
+                            <span class="inline-block px-4 py-2 bg-gray-100 rounded-lg font-bold text-neutral">{{
+                                price_step_percent }}%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Occupancy Thresholds -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-3">
+                        <label class="block">
+                            <span class="text-sm font-semibold text-neutral">Low Occupancy Threshold</span>
+                            <p class="text-xs text-gray-500 mt-1">Reduce price when below this %</p>
+                        </label>
+                        <div class="relative">
+                            <input type="range" name="low_occupancy_threshold" min="10" max="40"
+                                value="{{ low_occupancy_threshold }}"
+                                class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-yellow-500"
+                                oninput="this.nextElementSibling.textContent = this.value + '%'">
+                            <div class="text-center mt-2">
+                                <span
+                                    class="inline-block px-4 py-2 bg-yellow-100 rounded-lg font-bold text-yellow-700">{{
+                                    low_occupancy_threshold }}%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3">
+                        <label class="block">
+                            <span class="text-sm font-semibold text-neutral">High Occupancy Threshold</span>
+                            <p class="text-xs text-gray-500 mt-1">Increase price when above this %</p>
+                        </label>
+                        <div class="relative">
+                            <input type="range" name="high_occupancy_threshold" min="60" max="90"
+                                value="{{ high_occupancy_threshold }}"
+                                class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-green-500"
+                                oninput="this.nextElementSibling.textContent = this.value + '%'">
+                            <div class="text-center mt-2">
+                                <span class="inline-block px-4 py-2 bg-green-100 rounded-lg font-bold text-green-700">{{
+                                    high_occupancy_threshold }}%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Save Button -->
+                <div class="pt-6 border-t border-gray-200">
+                    <button type="submit"
+                        class="w-full md:w-auto px-8 py-3 bg-neutral hover:bg-black text-white font-semibold rounded-xl transition-all shadow-lg">
+                        Save Pricing Settings
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Profile Section -->
+    <div class="bg-white rounded-3xl border border-gray-200 shadow-sm overflow-hidden">
+        <div class="px-8 py-6 border-b border-gray-200">
+            <h2 class="text-xl font-semibold text-neutral">Profile Information</h2>
+            <p class="text-sm text-gray-600 mt-1">Update your account details</p>
+        </div>
+        <div class="p-8 space-y-6">
+            <div class="flex items-center gap-6">
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Manager" alt="Avatar"
+                    class="w-20 h-20 rounded-full bg-gray-100 ring-4 ring-gray-100">
+                <button class="text-primary font-medium text-sm hover:underline">Change Avatar</button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                    <input type="text" value="Manager Admin"
+                        class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary focus:border-transparent outline-none text-gray-500"
+                        readonly>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                    <input type="email" value="admin@airhostpro.com"
+                        class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary focus:border-transparent outline-none text-gray-500"
+                        readonly>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
